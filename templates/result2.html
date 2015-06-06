@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+	background-color : white;
+}
+
+
+h2 {
+  	color :green;
+  	text-align: left;
+	 
+	 font-size:20px;
+	 }
+
+p {
+ 		
+ 		font-size:18px;
+}
+</style>
+<body>
+
+{% if results %}
+	{% for entry in results.entries %}
+	</br>
+	<div style="background-color:lightgrey; padding:20px;">
+		<li><img src="{{entry.media_thumbnail.1.url}}" width="{{entry.media_thumbnail.1.width}}" height= "{{entry.media_thumbnail.1.height}}" >   {{entry.published}} 
+		 <h2><a href="{{entry.guid}}">{{entry.title}}</a></h2> 
+		<p>{{entry.description}}</p></li>
+	</div>
+	</br>
+	
+		
+	{% endfor %}
+	
+{% endif %}
+
+</body>
+</html>
